@@ -1,11 +1,26 @@
 <?php
     namespace Model;
-class User{
-    public $data='[{"id":1,"first_name":"Akim","last_name":"Zorzenoni","email":"azorzenoni0@dagondesign.com","gender":"Male","city":"Nadvoitsy"},{"id":2,"first_name":"Pauline","last_name":"Halbeard","email":"phalbeard1@theglobeandmail.com","gender":"Genderfluid","city":"Francisco Sarabia"},{"id":3,"first_name":"Lian","last_name":"Wohler","email":"lwohler2@yolasite.com","gender":"Female","city":"Koufália"},{"id":4,"first_name":"Errol","last_name":"McLese","email":"emclese3@patch.com","gender":"Female","city":"Popielów"},{"id":5,"first_name":"Nathalia","last_name":"MacDonough","email":"nmacdonough4@microsoft.com","gender":"Male","city":"Tân Hưng"},{"id":6,"first_name":"Kary","last_name":"Tippin","email":"ktippin5@zdnet.com","gender":"Female","city":"Moravská Třebová"},{"id":7,"first_name":"Alec","last_name":"Pfleger","email":"apfleger6@canalblog.com","gender":"Male","city":"Springfield"},{"id":8,"first_name":"Geralda","last_name":"Avory","email":"gavory7@hexun.com","gender":"Male","city":"Bystryanka"},{"id":9,"first_name":"Teddi","last_name":"Cottel","email":"tcottel8@hatena.ne.jp","gender":"Female","city":"Masallātah"},{"id":10,"first_name":"Ransom","last_name":"Volks","email":"rvolks9@jigsy.com","gender":"Female","city":"Tyumen"},{"id":11,"first_name":"Vinni","last_name":"Boscott","email":"vboscotta@yellowpages.com","gender":"Female","city":"Qingtang"},{"id":12,"first_name":"Clea","last_name":"Gherardi","email":"cgherardib@go.com","gender":"Female","city":"Porto Alto"},{"id":13,"first_name":"Victoir","last_name":"Raffin","email":"vraffinc@webmd.com","gender":"Male","city":"Weicheng"},{"id":14,"first_name":"Arlyne","last_name":"Goodboddy","email":"agoodboddyd@i2i.jp","gender":"Male","city":"Genet"},{"id":15,"first_name":"Karen","last_name":"Mullane","email":"kmullanee@artisteer.com","gender":"Male","city":"San Casimiro"},{"id":16,"first_name":"Cordelia","last_name":"Simonaitis","email":"csimonaitisf@adobe.com","gender":"Female","city":"Hrušovany u Brna"},{"id":17,"first_name":"Faina","last_name":"Veldman","email":"fveldmang@tuttocitta.it","gender":"Male","city":"Rueil-Malmaison"},{"id":18,"first_name":"Fee","last_name":"Swainger","email":"fswaingerh@mozilla.org","gender":"Female","city":"Preiļi"},{"id":19,"first_name":"Terencio","last_name":"Belly","email":"tbellyi@pagesperso-orange.fr","gender":"Female","city":"Chervonohryhorivka"},{"id":20,"first_name":"Fitz","last_name":"Wilbore","email":"fwilborej@qq.com","gender":"Male","city":"Fuming"}]';
+class User extends ActiveRecord{
     public function getUser(){
-        $valor=json_decode($this->data);
-        return $valor;
+        $query='SELECT * FROM usuarios';
+        $result=self::$db->query($query);
+        if($result->num_rows>0){
+            $valor=mysqli_fetch_all($result,MYSQLI_ASSOC);
+            return $valor;
+        }
+        return [];
     }
+
+    public function getDeleteUser($id){
+        $query='SELECT * FROM usuarios WHERE id='.$id;
+        $result=self::$db->query($query);
+        if($result->num_rows>0){
+            $valor=$result->fetch_assoc();
+            return $valor;
+        }
+        return [];
+    }
+
 }
 
 ?>
