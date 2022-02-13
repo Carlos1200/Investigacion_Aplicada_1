@@ -17,7 +17,7 @@
     </a>
 
     <div class="form-popup" id="formAgregar" style="font-size:0.75em;">
-        <form action="/action_page.php" class="form-container">
+        <form action="<?=$_SERVER['REQUEST_URI']?>" method="POST" class="form-container">
             <label for="nombre"><b>Nombre</b></label>
             <input type="text" placeholder="Ingresar nombre" name="nombre" required>
 

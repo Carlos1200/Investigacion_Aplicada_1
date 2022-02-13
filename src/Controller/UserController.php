@@ -15,6 +15,12 @@
             $usuarios=$users->getDeleteUser($id);
             $router->render('delete',['users'=>$usuarios]);
         }
+
+        public static function postUser(Router $router){
+            $user = new User($_POST);
+            $user->postUser();
+            self::getUser($router);
+        }
     }
 
 ?>
