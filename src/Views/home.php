@@ -27,8 +27,8 @@ include __DIR__ . "\plantilla.php";
                     echo "<td class='border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400'>" . $user['email'] . "</td>";
                     echo "<td class='border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400'>" . $user['gender'] . "</td>";
                     echo "<td class='border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400'>" . $user['city'] . "</td>";
-                    echo "<td class='border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400 cursor-pointer'><a href='/investigacion1/delete?id=" . $user['id'] . "'>Eliminar</a></td>";
-                    echo "<td class='border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400 cursor-pointer'><a href='/investigacion1/edit?id=" . $user['id'] . "'>Editar</a></td>";
+                    echo "<td class='border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400 cursor-pointer'><a href='" . $_ENV['HOST'] . "/delete?id=" . $user['id'] . "'>Eliminar</a></td>";
+                    echo "<td class='border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400 cursor-pointer'><a href='" . $_ENV['HOST'] . "/edit?id=" . $user['id'] . "'>Editar</a></td>";
                     echo "</tr>";
                 }
                 ?>

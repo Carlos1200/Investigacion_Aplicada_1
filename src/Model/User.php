@@ -25,4 +25,9 @@ class User extends ActiveRecord{
         $query='UPDATE usuarios SET '
     }*/
 
+    public function postDeleteUser($id){
+        $query='DELETE FROM usuarios WHERE id='.$id;
+        self::$db->query($query);
+    }
+
 }
