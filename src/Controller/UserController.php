@@ -15,6 +15,13 @@
             $usuarios=$users->getDeleteUser($id);
             $router->render('delete',['users'=>$usuarios]);
         }
+        
+        public static function postDeleteUser(Router $router){
+            $id = $_POST['id']??null;
+            $users = new User();
+            $users->postDeleteUser($id);
+            $router->redirect('/');
+        }
     }
 
 ?>

@@ -21,6 +21,11 @@ class User extends ActiveRecord{
         return [];
     }
 
+    public function postDeleteUser($id){
+        $query='DELETE FROM usuarios WHERE id='.$id;
+        self::$db->query($query);
+    }
+
 }
 
 ?>
