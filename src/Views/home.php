@@ -1,9 +1,9 @@
 <?php
-    include __DIR__."\plantilla.php";
+include __DIR__ . "\plantilla.php";
 ?>
-    <main class=" ">
-        <h1 class="text-center text-3xl font-bold py-5 text-white">Administrador de usuarios</h1>
-        <div class="table-responsive">
+<main class=" ">
+    <h1 class="text-center text-3xl font-bold py-5 text-white">Administrador de usuarios</h1>
+    <div class="table-responsive">
         <table class="border-separate table-auto  w-full border border-slate-400 dark:border-slate-500 bg-white dark:bg-slate-800 text-sm shadow-sm">
             <thead class="bg-slate-50 dark:bg-slate-700">
                 <tr>
@@ -19,22 +19,23 @@
             </thead>
             <tbody>
                 <?php
-                    foreach($users as $user){
-                        echo "<tr>";
-                        echo "<td class='border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400'>".$user['id']."</td>";
-                        echo "<td class='border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400'>".$user['first_name']."</td>";
-                        echo "<td class='border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400'>".$user['last_name']."</td>";
-                        echo "<td class='border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400'>".$user['email']."</td>";
-                        echo "<td class='border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400'>".$user['gender']."</td>";
-                        echo "<td class='border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400'>".$user['city']."</td>";
-                        echo "<td class='border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400 cursor-pointer'><a href='/investigacion1/delete?id=".$user['id']."'>Eliminar</a></td>";
-                        echo "<td class='border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400 cursor-pointer'><a href='/investigacion1/edit?id=".$user['id']."'>Editar</a></td>";
-                        echo "</tr>";
-                    }                        
+                foreach ($users as $user) {
+                    echo "<tr>";
+                    echo "<td class='border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400'>" . $user['id'] . "</td>";
+                    echo "<td class='border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400'>" . $user['first_name'] . "</td>";
+                    echo "<td class='border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400'>" . $user['last_name'] . "</td>";
+                    echo "<td class='border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400'>" . $user['email'] . "</td>";
+                    echo "<td class='border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400'>" . $user['gender'] . "</td>";
+                    echo "<td class='border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400'>" . $user['city'] . "</td>";
+                    echo "<td class='border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400 cursor-pointer'><a href='/investigacion1/delete?id=" . $user['id'] . "'>Eliminar</a></td>";
+                    echo "<td class='border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400 cursor-pointer'><a href='/investigacion1/edit?id=" . $user['id'] . "'>Editar</a></td>";
+                    echo "</tr>";
+                }
                 ?>
             </tbody>
         </table>
-        </div>
-    </main>
+    </div>
+</main>
 </body>
+
 </html>

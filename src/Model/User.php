@@ -20,7 +20,9 @@ class User extends ActiveRecord{
         }
         return [];
     }
+    /*
+    public function getUpdateUser($id){
+        $query='UPDATE usuarios SET '
+    }*/
 
 }
-
-?>

@@ -15,6 +15,11 @@
             $usuarios=$users->getDeleteUser($id);
             $router->render('delete',['users'=>$usuarios]);
         }
-    }
 
-?>
+        public static function getUpdateUser(Router $router){
+            $id = $_GET['id']??null;
+            $users = new User();
+            $usuarios=$users->getUpdateUser($id);
+            $router->render('update',['users'=>$usuarios]);
+        }
+    }
