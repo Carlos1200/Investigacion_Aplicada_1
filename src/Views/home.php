@@ -1,8 +1,9 @@
 <?php
     include __DIR__."\plantilla.php";
 ?>
-    <main class=" ">
+    <main class=" ">      
         <h1 class="text-center text-3xl font-bold py-5 text-white">Administrador de usuarios</h1>
+        
         <div class="table-responsive">
         <table class="border-separate table-auto  w-full border border-slate-400 dark:border-slate-500 bg-white dark:bg-slate-800 text-sm shadow-sm">
             <thead class="bg-slate-50 dark:bg-slate-700">
