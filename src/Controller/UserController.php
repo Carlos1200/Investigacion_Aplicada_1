@@ -34,8 +34,6 @@ class UserController
         $user->postUser();
         self::getUser($router);
     }
-
-
     public static function getEditUser(Router $router)
     {
         $id = $_GET['id'] ?? null;
@@ -46,14 +44,8 @@ class UserController
 
     public static function postEditUser(Router $router)
     {
-        $id = $_POST['id'] ?? null;
-        $firstName = $_POST['first_name'] ?? null;
-        $lastName = $_POST['last_name'] ?? null;
-        $email = $_POST['email'] ?? null;
-        $gender = $_POST['gender'] ?? null;
-        $city = $_POST['city'] ?? null;
-        $users = new User();
-        $users->postEditUser($id, $firstName, $lastName, $email, $gender, $city);
+        $users = new User($_POST);
+        $users->postEditUser();
         $router->redirect('/');
     }
 }

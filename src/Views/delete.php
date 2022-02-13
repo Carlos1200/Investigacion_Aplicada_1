@@ -5,7 +5,7 @@ include __DIR__ . "\plantilla.php";
 <div>
     <h1 class="text-3xl text-center pt-10 font-bold">Eliminar</h1>
     <p class="text-center text-2xl">¿Desea eliminar el usuario con las siguientes credenciales?</p>
-    <form action="<?php $_SERVER['REQUEST_METHOD'] ?>" method="post" class="bg-neutral-800 w-1/2 mx-auto p-5 rounded-lg">
+    <form action="<?php $_SERVER['REQUEST_URI'] ?>" method="post" class="bg-neutral-800 w-1/2 mx-auto p-5 rounded-lg">
         <div class="w-full">
             <input type="hidden" name="id" value="<?php echo $users['id'] ?>">
             <div class="flex flex-col mb-4">

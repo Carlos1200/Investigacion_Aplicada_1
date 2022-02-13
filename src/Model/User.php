@@ -4,7 +4,7 @@ namespace Model;
 
 class User extends ActiveRecord
 {
-
+    public $id;
     public $nombre;
     public $apellido;
     public $email;
@@ -13,6 +13,7 @@ class User extends ActiveRecord
 
     public function __construct($args = [])
     {
+        $this->id = $args['id'] ?? NULL;
         $this->nombre = $args['nombre'] ?? "";
         $this->apellido = $args['apellido'] ?? "";
         $this->email = $args['email'] ?? "";
@@ -64,8 +65,9 @@ class User extends ActiveRecord
         return [];
     }
 
-    public function postEditUser($id, $firstName, $lastName, $email, $gender, $city)
+    public function postEditUser()
     {
-        $query = 'UPDATE usuarios SET id=' . $id . ', first_name=' . $firstName . ', last_name=' . $lastName . ', email=' . $email . ', gender=' . $gender . ', city=' . $city;
+        $query = 'UPDATE usuarios SET first_name="' . $this->nombre . '", last_name="' . $this->apellido . '", email="' . $this->email . '", gender="' . $this->genero . '", city="' . $this->ciudad . '" WHERE id=' . $this->id;
+        self::$db->query($query);
     }
 }
