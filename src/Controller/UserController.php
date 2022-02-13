@@ -22,6 +22,11 @@
             $users->postDeleteUser($id);
             $router->redirect('/');
         }
+        public static function postUser(Router $router){
+            $user = new User($_POST);
+            $user->postUser();
+            self::getUser($router);
+        }
     }
 
 ?>
