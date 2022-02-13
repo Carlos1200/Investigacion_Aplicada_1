@@ -43,4 +43,8 @@ class Router{
         include __DIR__."/src/Views/$view.php";
     }
 
+    public function redirect($url){
+        header("Location:".$_ENV['HOST'].$url);
+    }
+
 }
