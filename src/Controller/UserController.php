@@ -13,7 +13,6 @@ class UserController
         $usuarios = $users->getUser();
         $router->render('home', ['users' => $usuarios]);
     }
-
     public static function getDeleteUser(Router $router)
     {
         $id = $_GET['id'] ?? null;
@@ -29,6 +28,13 @@ class UserController
         $users->postDeleteUser($id);
         $router->redirect('/');
     }
+    public static function postUser(Router $router)
+    {
+        $user = new User($_POST);
+        $user->postUser();
+        self::getUser($router);
+    }
+
 
     public static function getEditUser(Router $router)
     {
