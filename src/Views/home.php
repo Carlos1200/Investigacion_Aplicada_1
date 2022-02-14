@@ -4,7 +4,7 @@ include __DIR__ . "\plantilla.php";
 <main class="mx-5 h-screen">
     <h1 class="text-center text-3xl font-bold py-5 text-white">Administrador de usuarios</h1>
 
-    <a class="absolute w-14 h-14 bottom-10 right-10 bg-green-500 text-white rounded-full text-center shadow" onclick="openFormAgregar()">
+    <a class="absolute w-14 h-14 bottom-10 right-10 bg-green-500 text-white rounded-full text-center shadow cursor-pointer" onclick="openFormAgregar()">
         <i class="fa fa-plus text-5xl font-bold">+</i>
     </a>
 
